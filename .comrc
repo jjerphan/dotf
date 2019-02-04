@@ -1,0 +1,43 @@
+#           ___           ___           ___           ___           ___
+#          /\__\         /\  \         /\  \         /\  \         /\__\
+#         /:/  /        /::\  \       |::\  \       /::\  \       /:/  /
+#        /:/  /        /:/\:\  \      |:|:\  \     /:/\:\__\     /:/  /
+#       /:/  /  ___   /:/  \:\  \   __|:|\:\  \   /:/ /:/  /    /:/  /  ___
+#      /:/__/  /\__\ /:/__/ \:\__\ /::::|_\:\__\ /:/_/:/__/___ /:/__/  /\__\
+#      \:\  \ /:/  / \:\  \ /:/  / \:\~~\  \/__/ \:\/:::::/  / \:\  \ /:/  /
+#       \:\  /:/  /   \:\  /:/  /   \:\  \        \::/~~/~~~~   \:\  /:/  /
+#  __    \:\/:/  /     \:\/:/  /     \:\  \        \:\~~\        \:\/:/  /
+# /\_\    \::/  /       \::/  /       \:\__\        \:\__\        \::/  /
+# \/_/     \/__/         \/__/         \/__/         \/__/         \/__/
+#
+#       Common profile for all shells.
+#       Runs on each new shell
+#
+#       Defines aliases, and others settings
+#
+# Personnal profile
+source $HOME/.myrc 2> /dev/null
+
+# Aliases
+export DOTFILES_BARE="$HOME/.dotfiles"
+
+## Profiles ✏
+alias dotf='/usr/bin/git --git-dir=$DOTFILES_BARE --work-tree=$HOME'
+alias br="vim $HOME/.bashrc && source $HOME/.bashrc"
+alias zr="vim $HOME/.zshrc && source $HOME/.zshrc"
+alias vr="vim $HOME/.vimrc && source $HOME/.vimrc"
+alias mr="vim $HOME/.myrc && source $HOME/.myrc"
+alias co="vim $HOME/.comrc && source $HOME/.comrc"
+alias i3rc="vim $HOME/.config/i3/config"
+
+## Programs
+alias v="vim"
+alias n="nautilus"
+alias open="gnome-open"
+alias rm="rm -I"
+alias toclip="xclip -selection c"
+
+## Docker 🐳
+alias docker_clean_images='docker rmi $(docker images -a --filter=dangling=true -q)'
+alias docker_clean_ps='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
+

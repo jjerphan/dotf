@@ -1,0 +1,33 @@
+[core]
+    name = jjerphan
+    email = julien.jerphanion@protonmail.com
+    editor = vim
+
+[user]
+    name = Julien Jerphanion
+    email = julien.jerphanion@protonmail.com
+
+[color]
+    ui = true
+
+[alias]
+    st = status
+    cm = commit
+    br = branch
+    co = checkout
+    df = diff
+    dc = diff --cached
+    lg = log -p
+    pu = push
+    pl = pull
+    ppr = push --set-upstream origin
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    latest=for-each-ref --sort=-taggerdate --format='%(refname:short)' --count=1
+    undo = git reset --soft HEAD^
+    brd = branch -D
+
+[push]
+    default = upstream
+[status]
+	showUntrackedFiles = all

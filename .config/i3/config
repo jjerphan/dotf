@@ -1,0 +1,194 @@
+#
+#   ██╗██████╗  ██████╗ ██████╗ ███╗   ██╗███████╗██╗ ██████╗
+#   ██║╚════██╗██╔════╝██╔═══██╗████╗  ██║██╔════╝██║██╔════╝
+#   ██║ █████╔╝██║     ██║   ██║██╔██╗ ██║█████╗  ██║██║  ███╗
+#   ██║ ╚═══██╗██║     ██║   ██║██║╚██╗██║██╔══╝  ██║██║   ██║
+#   ██║██████╔╝╚██████╗╚██████╔╝██║ ╚████║██║     ██║╚██████╔╝
+#   ╚═╝╚═════╝  ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝
+#
+
+# Laptop setup
+exec ~/.dotfiles/setup_touchpad_i3.sh
+exec ~/.dotfiles/change_res.sh
+
+# i3-gaps config
+for_window [class="^.*"] border pixel 5
+gaps inner 15
+gaps outer 15
+
+# General dropdown window traits. The order can matter.
+for_window [instance="dropdown_*"]                  floating enable
+for_window [instance="dropdown_*"]                  move scratchpad
+for_window [instance="dropdown_*"]                  sticky enable
+for_window [instance="dropdown_*"]                  scratchpad show
+for_window [instance="dropdown_*"]                  move position center
+
+# Variables
+set $mod Mod4
+set $alt Mod1
+set $term --no-startup-id st
+set $shutdown sudo -A shutdown -h now
+set $reboot sudo -A reboot
+set $hibernate sudo -A systemctl suspend
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Screen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+font pango:DejaVu Sans Mono 14
+
+# Start a terminal
+bindsym $mod+Return         exec st
+
+# Kill focused window
+bindsym $mod+Shift+A        kill
+
+# Start dmenu (a program launcher)
+bindsym $mod+d              exec dmenu_run
+
+# Change focus
+bindsym $mod+h              focus left
+bindsym $mod+j              focus down
+bindsym $mod+k              focus up
+bindsym $mod+l              focus right
+
+# Move focused window
+bindsym $mod+Shift+h        move left 30
+bindsym $mod+Shift+j        move down 30
+bindsym $mod+Shift+k        move up 30
+bindsym $mod+Shift+l        move right 30
+
+# Change gaps
+bindsym $mod+z              gaps outer current plus 5
+bindsym $mod+Shift+z        gaps outer current minus 5
+bindsym $mod+s              gaps inner current plus 5
+bindsym $mod+Shift+s        gaps inner current minus 5
+
+# Split in horizontal orientation
+bindsym $mod+Shift+v        split h
+
+# Split in vertical orientation
+bindsym $mod+v              split v
+
+# Enter fullscreen mode for the focused container
+bindsym $mod+f              fullscreen toggle
+
+# Change container layout (stacked, tabbed, toggle split)
+bindsym $mod+e              layout toggle split
+
+# Toggle tiling / floating
+bindsym $mod+Shift+space    floating toggle
+
+# Change focus between tiling / floating windows
+bindsym $mod+space          focus mode_toggle
+
+# Focus the parent container
+bindsym $mod+q              focus parent
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# Switch to workspace (French Keyboard layout)
+bindsym $mod+ampersand      workspace $ws1
+bindsym $mod+eacute         workspace $ws2
+bindsym $mod+quotedbl       workspace $ws3
+bindsym $mod+apostrophe     workspace $ws4
+bindsym $mod+parenleft      workspace $ws5
+bindsym $mod+minus          workspace $ws6
+bindsym $mod+egrave         workspace $ws7
+bindsym $mod+underscore     workspace $ws8
+bindsym $mod+ccedilla       workspace $ws9
+bindsym $mod+agrave         workspace $ws10
+
+# Move focused container to workspace
+bindsym $mod+Shift+1        move container to workspace $ws1
+bindsym $mod+Shift+eacute   move container to workspace $ws2
+bindsym $mod+Shift+3        move container to workspace $ws3
+bindsym $mod+Shift+4        move container to workspace $ws4
+bindsym $mod+Shift+5        move container to workspace $ws5
+bindsym $mod+Shift+6        move container to workspace $ws6
+bindsym $mod+Shift+egrave   move container to workspace $ws7
+bindsym $mod+Shift+8        move container to workspace $ws8
+bindsym $mod+Shift+ccedilla move container to workspace $ws9
+bindsym $mod+Shift+agrave   move container to workspace $ws10
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# Exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# Resize window
+bindsym $mod+y              resize shrink width 10 px or 10 ppt
+bindsym $mod+u              resize shrink height 10 px or 10 ppt
+bindsym $mod+i              resize grow height 10 px or 10 ppt
+bindsym $mod+o              resize grow width 10 px or 10 ppt
+
+# Set Xresources colors:
+set_from_resource           $darkblack    color0  #000000
+set_from_resource           $black        color8  #000000
+set_from_resource           $darkred      color1  #000000
+set_from_resource           $red          color9  #000000
+set_from_resource           $darkgreen    color2  #000000
+set_from_resource           $green        color10 #000000
+set_from_resource           $darkyellow   color3  #000000
+set_from_resource           $yellow       color11 #000000
+set_from_resource           $darkblue     color4  #000000
+set_from_resource           $blue         color12 #000000
+set_from_resource           $darkmagenta  color5  #000000
+set_from_resource           $magenta      color13 #000000
+set_from_resource           $darkcyan     color6  #000000
+set_from_resource           $cyan         color14 #000000
+set_from_resource           $darkwhite    color7  #000000
+set_from_resource           $white        color15 #000000
+set $transparent                #00000000
+
+#                       BORDER          BACKGROUND      TEXT        INDICATOR       CHILD_BORDER
+client.focused          $red            $red            $magenta    $darkmagenta    $darkblue
+client.unfocused        $transparent    $blue           $white      $darkblue       $darkblack
+client.focused_inactive $transparent    $blue           $white      $darkblue       $darkblack
+client.urgent           $darkred        $darkred        $black      $darkred        $darkred
+client.background $black
+
+# i3blocks config
+bar {
+    font pango:mono 10
+        colors {
+        background $darkblack
+        statusline $darkwhite
+        separator $cyan
+        focused_workspace  $blue $darkblue $darkblack
+        active_workspace   $blue $blue $darkwhite
+        inactive_workspace $darkblack $darkblack $white
+        urgent_workspace   $darkblack $darkblack $white
+    }
+    status_command i3blocks
+    position top
+    mode dock
+    modifier None
+}
+
+# Programs bindings
+bindsym $alt+a              atom
+bindsym $alt+f              firefox
+bindsym $alt+r              ranger
+bindsym $alt+t              thunderbird
+
