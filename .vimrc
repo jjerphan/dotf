@@ -86,6 +86,10 @@
     map <leader>tm :tabmove
     map <leader>t<leader> :tabnext
 
+    " Expected behavior of going left or right
+    " at the beginning or end of line
+    set whichwrap+=<,>,h,l[,]
+
     set number relativenumber
 
     augroup numbertoggle
