@@ -41,3 +41,8 @@ alias toclip="xclip -selection c"
 alias docker_clean_images='docker rmi $(docker images -a --filter=dangling=true -q)'
 alias docker_clean_ps='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
 
+## Command to display a random manual page
+randoman() {
+   man $(ls /bin | shuf -n1)
+}
+
