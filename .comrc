@@ -19,7 +19,7 @@
 source $HOME/.myrc 2> /dev/null
 
 # Aliases
-export DOTFILES_BARE="$HOME/.dotfiles"
+export DOTFILES_BARE="$HOME/.dotf"
 
 ## Profiles ✏
 alias dotf='/usr/bin/git --git-dir=$DOTFILES_BARE --work-tree=$HOME'
