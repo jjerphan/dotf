@@ -1,10 +1,10 @@
 [core]
-    name = jjerphan
+    name = Julien Jerphanion (@jjerphan)
     email = git@jjerphan.xyz
     editor = vim
 
 [user]
-    name = Julien Jerphanion
+    name = Julien Jerphanion (@jjerphan)
     email = git@jjerphan.xyz
 
 [color]
@@ -29,5 +29,3 @@
 
 [push]
     default = upstream
-[status]
-    showUntrackedFiles = all

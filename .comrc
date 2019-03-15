@@ -19,30 +19,51 @@
 source $HOME/.myrc 2> /dev/null
 
 # Aliases
-export DOTFILES_BARE="$HOME/.dotf"
 
 ## Profiles ✏
+export DOTFILES_BARE="$HOME/.dotf"
 alias dotf='/usr/bin/git --git-dir=$DOTFILES_BARE --work-tree=$HOME'
 alias br="vim $HOME/.bashrc && source $HOME/.bashrc"
 alias zr="vim $HOME/.zshrc && source $HOME/.zshrc"
 alias vr="vim $HOME/.vimrc && source $HOME/.vimrc"
 alias mr="vim $HOME/.myrc && source $HOME/.myrc"
 alias co="vim $HOME/.comrc && source $HOME/.comrc"
-alias i3rc="vim $HOME/.config/i3/config"
 
-## Programs
+# To have aliases expansion when using watch
+alias watch='watch '
+alias wa='watch -n 1 '
+
+# Programs
 alias v="vim"
-alias n="nautilus"
-alias open="gnome-open"
-alias rm="rm -I"
 alias toclip="xclip -selection c"
 
-## Docker 🐳
-alias docker_clean_images='docker rmi $(docker images -a --filter=dangling=true -q)'
-alias docker_clean_ps='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
+## Python
+alias p="python"
 
-## Command to display a random manual page
-randoman() {
-   man $(ls /bin | shuf -n1)
+export VENVS_FOLDER="$HOME/.virtualenvs"
+
+mkdir -p $VENVS_FOLDER
+
+### To quickly change the venv
+function s() {
+    deactivate 2> /dev/null
+    source $VENVS_FOLDER/$1/bin/activate
 }
+
+## Docker 🐳
+# List images without Kubernetes fixtures
+alias di='docker images | grep -v "kube" | grep -v "k8s"'
+alias drmi='docker rmi '
+alias drmiall='docker rmi $(docker images -a --filter=dangling=true -q)'
+alias drmca='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
+alias drmin="docker images -a | grep '^<none>' | awk '{print $3}' | xargs docker rmi -f"
+
+## Kubernetes ☸️
+alias b="bat"
+alias c="cat"
+alias k="kubectl"
+alias klsp="kubectl get pods"
+alias krmp="kubectl delete pods"
+alias kcatp="kubectl describe pods"
+alias h="helm"
 
