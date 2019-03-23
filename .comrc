@@ -25,9 +25,9 @@ export DOTFILES_BARE="$HOME/.dotf"
 alias dotf='/usr/bin/git --git-dir=$DOTFILES_BARE --work-tree=$HOME'
 alias br="vim $HOME/.bashrc && source $HOME/.bashrc"
 alias zr="vim $HOME/.zshrc && source $HOME/.zshrc"
-alias vr="vim $HOME/.vimrc && source $HOME/.vimrc"
 alias mr="vim $HOME/.myrc && source $HOME/.myrc"
 alias co="vim $HOME/.comrc && source $HOME/.comrc"
+alias vr="vim $HOME/.vimrc"
 
 # To have aliases expansion when using watch
 alias watch='watch '
@@ -67,3 +67,8 @@ alias krmp="kubectl delete pods"
 alias kcatp="kubectl describe pods"
 alias h="helm"
 
+
+## Command to display a random manual page
+function randoman() {
+   man $(ls /bin | shuf -n1)
+}
