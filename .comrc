@@ -64,6 +64,7 @@ alias c="cat"
 alias k="kubectl"
 alias klsp="kubectl get pods"
 alias krmp="kubectl delete pods"
+alias krmj="kubectl delete jobs"
 alias kcatp="kubectl describe pods"
 alias h="helm"
 
