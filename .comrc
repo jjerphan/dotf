@@ -65,9 +65,13 @@ alias k="kubectl"
 alias klsp="kubectl get pods"
 alias krmp="kubectl delete pods"
 alias krmj="kubectl delete jobs"
+alias krmd="kubectl delete deployments"
 alias kcatp="kubectl describe pods"
 alias h="helm"
 
+# Shortcuts
+alias sc="cd $HOME/.scripts"
+alias tmp="cd /tmp"
 
 ## Command to display a random manual page
 function randoman() {
