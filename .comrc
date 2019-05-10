@@ -35,13 +35,13 @@ alias wa='watch -n 1 '
 
 # Programs
 alias v="vim"
+alias b="bat"
+alias c="cat"
 alias toclip="xclip -selection c"
 
 ## Python
 alias p="python"
-
 export VENVS_FOLDER="$HOME/.virtualenvs"
-
 mkdir -p $VENVS_FOLDER
 
 ### To quickly change the venv
@@ -59,8 +59,6 @@ alias drmca='docker rm $(docker ps --filter=status=exited --filter=status=create
 alias drmin="docker images -a | grep '^<none>' | awk '{print $3}' | xargs docker rmi -f"
 
 ## Kubernetes ☸️
-alias b="bat"
-alias c="cat"
 alias k="kubectl"
 alias klsp="kubectl get pods"
 alias krmp="kubectl delete pods"
@@ -69,9 +67,18 @@ alias krmd="kubectl delete deployments"
 alias kcatp="kubectl describe pods"
 alias h="helm"
 
-# Shortcuts
-alias sc="cd $HOME/.scripts"
+# Personnal scripts
+export SCRIPTS_FOLDER=$HOME/.scripts
+export PATH=$PATH:$SCRIPTS_FOLDER
+
+# Folder for projects
+export DEV_FOLDER=$HOME/dev
+
+# Folders shortcut
 alias tmp="cd /tmp"
+alias sc="cd $SCRIPTS_FOLDER"
+alias dl="cd $HOME/Downloads"
+alias dev="cd $DEV_FOLDER"
 
 ## Command to display a random manual page
 function randoman() {
