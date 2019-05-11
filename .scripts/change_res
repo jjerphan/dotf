@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Change the resolution (fix for i3)
+
+xrandr --output eDP-1 --mode 1920x1080

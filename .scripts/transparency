@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Setup the transparency of windows for i3
+
+compton &
