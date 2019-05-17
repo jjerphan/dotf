@@ -77,3 +77,15 @@ alias tmp="cd /tmp"
 function randoman() {
    man $(ls /bin | shuf -n1)
 }
+
+## Command to clone distant git repo hosted on GitHub
+ghcl() {
+    repo=$1
+    git clone git@github.com:$repo.git
+}
+
+## Command to clone distant git repo hosted on UTC Gitlab instance
+glcl() {
+    repo=$1
+    git clone git@gitlab.utc.fr:$repo.git
+}
