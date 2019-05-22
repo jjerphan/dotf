@@ -28,6 +28,7 @@ alias zr="vim $HOME/.zshrc && source $HOME/.zshrc"
 alias mr="vim $HOME/.myrc && source $HOME/.myrc"
 alias co="vim $HOME/.comrc && source $HOME/.comrc"
 alias vr="vim $HOME/.vimrc"
+alias tmcf="vim $HOME/.tmux.conf"
 
 # To have aliases expansion when using watch
 alias watch='watch '
