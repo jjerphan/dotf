@@ -26,6 +26,6 @@
     latest=for-each-ref --sort=-taggerdate --format='%(refname:short)' --count=1
     undo = git reset --soft HEAD^
     brd = branch -D
-
+    conflicts = diff --name-only --diff-filter=U
 [push]
     default = upstream
