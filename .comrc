@@ -41,7 +41,8 @@ alias c="cat"
 alias toclip="xclip -selection c"
 
 ## Python
-alias p="python"
+alias p="python "
+alias ipy="ipython "
 export VENVS_FOLDER="$HOME/.virtualenvs"
 mkdir -p $VENVS_FOLDER
 
@@ -58,6 +59,10 @@ alias drmi='docker rmi '
 alias drmiall='docker rmi $(docker images -a --filter=dangling=true -q)'
 alias drmca='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
 alias drmin="docker images -a | grep '^<none>' | awk '{print $3}' | xargs docker rmi -f"
+
+docker-bash() {
+    docker run -it $1 /bin/bash
+}
 
 ## Kubernetes ☸️
 alias k="kubectl"
