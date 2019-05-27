@@ -27,5 +27,6 @@
     undo = git reset --soft HEAD^
     brd = branch -D
     conflicts = diff --name-only --diff-filter=U
+    amend = commit --amend
 [push]
     default = upstream
