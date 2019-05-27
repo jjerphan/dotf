@@ -39,6 +39,8 @@ alias v="vim "
 alias nv="nvim "
 alias b="bat "
 alias c="cd "
+alias more="less "
+alias m="less "
 alias toclip="xclip -selection c "
 
 ## Python
