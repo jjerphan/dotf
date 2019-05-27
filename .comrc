@@ -35,11 +35,11 @@ alias watch='watch '
 alias wa='watch -n 1 '
 
 # Programs
-alias v="vim"
-alias nv="nvim"
-alias b="bat"
-alias c="cat"
-alias toclip="xclip -selection c"
+alias v="vim "
+alias nv="nvim "
+alias b="bat "
+alias c="cd "
+alias toclip="xclip -selection c "
 
 ## Python
 alias p="python "
