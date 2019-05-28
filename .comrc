@@ -87,6 +87,7 @@ alias krmj="kubectl delete jobs"
 alias krmd="kubectl delete deployments"
 alias kcatp="kubectl describe pods"
 alias h="helm"
+alias shck="shellcheck"
 
 # Personnal scripts
 export SCRIPTS_FOLDER=$HOME/.scripts
