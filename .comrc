@@ -51,9 +51,10 @@ alias v="vim "
 alias nv="nvim "
 alias b="bat "
 alias c="cd "
-alias more="less "
 alias m="less "
 alias toclip="xclip -selection c "
+alias shck="shellcheck"
+alias h="helm"
 
 ## Python
 alias p="python "
@@ -81,13 +82,26 @@ docker-bash() {
 
 ## Kubernetes ☸️
 alias k="kubectl"
+
+## Pods
 alias klsp="kubectl get pods"
+alias kdsp="kubectl describe pods"
 alias krmp="kubectl delete pods"
+
+## Jobs
+alias klsj="kubectl get jobs"
+alias kdsj="kubectl describe jobs"
 alias krmj="kubectl delete jobs"
+
+## Services
+alias klss="kubectl get services"
+alias kdss="kubectl describe services"
+alias krms="kubectl delete services"
+
+## Deployments
+alias klsd="kubectl get deployments"
+alias kdsd="kubectl describe deployments"
 alias krmd="kubectl delete deployments"
-alias kcatp="kubectl describe pods"
-alias h="helm"
-alias shck="shellcheck"
 
 # Personnal scripts
 export SCRIPTS_FOLDER=$HOME/.scripts
