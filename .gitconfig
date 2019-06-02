@@ -31,3 +31,5 @@
     amend = commit --amend
 [push]
     default = upstream
+[commit]
+	gpgSign = true
