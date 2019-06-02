@@ -6,6 +6,7 @@
 [user]
     name = Julien Jerphanion (@jjerphan)
     email = git@jjerphan.xyz
+	signingkey = 7C2E35B8
 
 [color]
     ui = true
