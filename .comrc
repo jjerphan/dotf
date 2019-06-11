@@ -142,3 +142,8 @@ glcl() {
     repo=$1
     git clone git@gitlab.utc.fr:$repo.git
 }
+
+## Generate UML class digramm from code
+touml() {
+    pulm $1 | plantuml -p > $2
+}
