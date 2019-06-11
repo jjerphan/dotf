@@ -76,6 +76,29 @@ alias -s tex=$EDITOR
 alias -s sh=$EDITOR
 alias -s py=python
 
+# Quick navigation between previous folders
+d='dirs -v | head -20'
+1='cd -'
+2='cd -2'
+3='cd -3'
+4='cd -4'
+5='cd -5'
+6='cd -6'
+7='cd -7'
+8='cd -8'
+9='cd -9'
+10='cd -10'
+11='cd -11'
+12='cd -12'
+13='cd -13'
+14='cd -14'
+15='cd -15'
+16='cd -16'
+17='cd -17'
+18='cd -18'
+19='cd -19'
+20='cd -20'
+
 # Global aliases
 alias -g C='| wc -l'
 alias -g ELS='|& less -S'
