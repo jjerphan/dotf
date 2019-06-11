@@ -125,3 +125,8 @@ glcl() {
 touml() {
     pulm $1 | plantuml -p > $2
 }
+
+## Get cheat sheet of page
+cheat() {
+    curl cheat.sh/$1
+}
