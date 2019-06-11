@@ -56,9 +56,6 @@ echo -e "\033]6;1;bg;red;brightness;18\a"
 echo -e "\033]6;1;bg;green;brightness;26\a"
 echo -e "\033]6;1;bg;blue;brightness;33\a"
 
-# Global shells settings
-source $HOME/.comrc
-
 # Autocompletion for kubectl
 
 if [ $commands[kubectl] ]; then
@@ -69,3 +66,35 @@ fi
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
+
+# Global shells settings
+source $HOME/.comrc
+
+# Suffix aliases
+alias -s md=$EDITOR
+alias -s tex=$EDITOR
+alias -s sh=$EDITOR
+alias -s py=python
+
+# Global aliases
+alias -g C='| wc -l'
+alias -g ELS='|& less -S'
+alias -g ETL='|& tail -20'
+alias -g ET='|& tail'
+alias -g G='| egrep'
+alias -g H='| head'
+alias -g HL='|& head -20'
+alias -g Sk="*~(*.bz2|*.gz|*.tgz|*.zip|*.z)"
+alias -g LL="2>&1 | less"
+alias -g L="| less"
+alias -g LS='| less -S'
+alias -g M='| more'
+alias -g NE="2> /dev/null"
+alias -g NS='| sort -n'
+alias -g NUL="> /dev/null 2>&1"
+alias -g RNS='| sort -nr'
+alias -g S='| sort'
+alias -g TL='| tail -20'
+alias -g T='| tail'
+alias -g US='| sort -u'
+alias -g X='| xargs'
