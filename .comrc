@@ -91,6 +91,10 @@ alias klsd="kubectl get deployments"
 alias kdsd="kubectl describe deployments"
 alias krmd="kubectl delete deployments"
 
+# Nodes
+alias klsn="kubectl get nodes"
+alias kdsn="kubectl describe nodes"
+
 # Personnal scripts
 export SCRIPTS_FOLDER=$HOME/.scripts
 export PATH=$PATH:$SCRIPTS_FOLDER
