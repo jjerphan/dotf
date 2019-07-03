@@ -43,6 +43,7 @@ alias m="less "
 alias toclip="xclip -selection c "
 alias shck="shellcheck"
 alias h="helm"
+alias dea="deactivate"
 
 ## Python
 alias p="python "
@@ -128,6 +129,11 @@ glcl() {
 ## Generate UML class digramm from code
 touml() {
     pulm $1 | plantuml -p > $2
+}
+
+## Returns size in bytes
+size() {
+   wc -c < $1 | xargs
 }
 
 ## Get cheat sheet of page
