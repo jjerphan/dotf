@@ -30,6 +30,8 @@
     conflicts = diff --name-only --diff-filter=U
     amend = commit --amend
     tree = log --graph --oneline --all
+    po = push origin
+    diffs = diff --staged
 [push]
     default = upstream
 [commit]
