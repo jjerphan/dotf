@@ -69,6 +69,9 @@ docker-bash() {
     docker run -it $1 /bin/bash
 }
 
+# Compile LaTeX docker via Docker
+alias docomp="docker run -v $(pwd):/home -it -w=/home jjerphan/latex-render make"
+
 ## Kubernetes ☸️
 alias k="kubectl"
 
