@@ -35,4 +35,4 @@
 [push]
     default = upstream
 [commit]
-    gpgSign = true
+	gpgSign = true

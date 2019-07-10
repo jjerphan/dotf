@@ -73,7 +73,6 @@ source $HOME/.comrc
 # Suffix aliases
 alias -s md=$EDITOR
 alias -s tex=$EDITOR
-alias -s sh=$EDITOR
 alias -s py=python
 
 # Quick navigation between previous folders
