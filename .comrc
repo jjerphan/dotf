@@ -65,12 +65,21 @@ alias drmiall='docker rmi $(docker images -a --filter=dangling=true -q)'
 alias drmca='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
 alias drmin="docker images -a | grep '^<none>' | awk '{print $3}' | xargs docker rmi -f"
 
+alias dlsc="docker ps -a"
+alias drmc="docker container rm "
+
+# Force delete containers
+alias dbomb="docker container rm \$(docker ps -aq) -f"
+
 docker-bash() {
     docker run -it $1 /bin/bash
 }
 
 # Compile LaTeX docker via Docker
 alias docomp="docker run -v $(pwd):/home -it -w=/home jjerphan/latex-render make"
+
+# Speedtest
+alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
 
 ## Kubernetes ☸️
 alias k="kubectl"
