@@ -110,6 +110,7 @@ export DEV_FOLDER=$HOME/dev
 alias tmp="cd /tmp"
 alias sc="cd $SCRIPTS_FOLDER"
 alias dl="cd $HOME/Downloads"
+alias doc="cd $HOME/Documents"
 alias dev="cd $DEV_FOLDER"
 
 ## Command to display a random manual page
