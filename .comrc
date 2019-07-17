@@ -44,6 +44,8 @@ alias toclip="xclip -selection c "
 alias shck="shellcheck"
 alias h="helm"
 alias dea="deactivate"
+alias mk="minikube "
+
 
 ## Python
 alias p="python "
@@ -88,6 +90,7 @@ alias k="kubectl"
 alias klsp="kubectl get pods"
 alias kdsp="kubectl describe pods"
 alias krmp="kubectl delete pods"
+alias krmcp="kubectl get pods | grep Completed | awk '{print cd -}' | xargs kubectl delete pod"
 
 ## Jobs
 alias klsj="kubectl get jobs"
