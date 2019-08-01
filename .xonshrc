@@ -1,0 +1,7 @@
+$FOREIGN_ALIASES_SUPPRESS_SKIP_MESSAGE = True
+$XONSH_SHOW_TRACEBACK = True
+source-bash "echo loading xonsh foreign shell"
+
+source-bash ~/.comrc
+
+$PROMPT = lambda: '{INTENSE_CYAN}{user}{INTENSE_WHITE}@{CYAN}{hostname}{INTENSE_WHITE}:{cwd} {branch_color}{gitstatus:[{}]}{NO_COLOR} {BOLD_BLUE}{NO_COLOR}\n → '
