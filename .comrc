@@ -128,7 +128,7 @@ alias dev="cd $DEV_FOLDER"
 
 ## Command to display a random manual page
 function randoman() {
-   man $(ls /bin | shuf -n1)
+   man $(man -k . | shuf -n1 | awk '{print $1}')
 }
 
 ## Command to clone distant git repo hosted on GitHub
