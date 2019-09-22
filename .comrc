@@ -70,6 +70,7 @@ alias drmin="docker images -a | grep '^<none>' | awk '{print $3}' | xargs docker
 
 alias dlsc="docker ps -a"
 alias drmc="docker container rm "
+alias dc="docker-compose "
 
 # Force delete containers
 alias dbomb="docker container rm \$(docker ps -aq) -f"
