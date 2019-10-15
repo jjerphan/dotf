@@ -46,7 +46,7 @@ alias shck="shellcheck"
 alias h="helm"
 alias dea="deactivate"
 alias mk="minikube "
-
+alias today="date -u +'%Y-%m-%d'"
 
 ## Python
 alias p="python "
