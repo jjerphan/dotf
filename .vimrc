@@ -50,13 +50,19 @@
         Plug 'KeitaNakamura/tex-conceal.vim'
             set conceallevel=1
             let g:tex_conceal='abdmg'
+        Plug 'drewtempelmeyer/palenight.vim'
+        Plug 'vim-airline/vim-airline'
     call plug#end()
 
-" => Fix misspell on the fly!
+    set background=dark
+    colorscheme palenight
+    "let g:lightline.colorscheme = 'palenight'
+    let g:airline_theme = 'palenight'
+
+    " => Fix misspell on the fly!
     setlocal spell
     set spelllang=en_us
     inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
-
 
 " => VIM user interface
     let $LANG='en'
