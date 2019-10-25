@@ -39,6 +39,8 @@
     call plug#begin('~/.vim/plugged')
         Plug 'junegunn/goyo.vim'
         Plug 'JuliaEditorSupport/julia-vim'
+
+        " LaTeX
         Plug 'lervag/vimtex'
             let g:tex_flavor='latex'
             let g:vimtex_view_method='zathura'
@@ -52,6 +54,10 @@
             let g:tex_conceal='abdmg'
         Plug 'drewtempelmeyer/palenight.vim'
         Plug 'vim-airline/vim-airline'
+
+        " C++
+        Plug 'Valloric/YouCompleteMe'
+        Plug 'vim-syntastic/syntastic'
     call plug#end()
 
     set background=dark
