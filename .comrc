@@ -46,12 +46,15 @@ alias toclip="xclip -selection c "
 alias shck="shellcheck"
 alias h="helm"
 alias dea="deactivate"
+alias jn="jupyter notebook "
 alias mk="minikube "
 alias today="date -u +'%Y-%m-%d'"
+alias g="g++ -Wall -Weffc++ -Wextra -Wsign-conversion -Werror -std=c++17 "
 
 ## Python
 alias p="python "
 alias ipy="ipython "
+alias pm="python manage.py"
 export VENVS_FOLDER="$HOME/.virtualenvs"
 mkdir -p $VENVS_FOLDER
 
@@ -177,3 +180,4 @@ fix () {
     export PYTHONIOENCODING=$TF_PYTHONIOENCODING;
     test -n "$TF_CMD" && print -s $TF_CMD
 }
+
