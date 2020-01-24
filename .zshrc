@@ -17,7 +17,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 source $ZSH/oh-my-zsh.sh
-plugins=(git zsh-autosuggestions virtualenv fzf)
+plugins=(git zsh-autosuggestions virtualenv fzf autojump)
 
 # For colors
 setopt prompt_subst
