@@ -39,7 +39,7 @@ alias wa='watch -n 1 '
 alias v="vim "
 alias nv="nvim "
 alias b="bat "
-alias c="cd "
+alias c="codium "
 alias m="less "
 alias o="open"
 alias toclip="xclip -selection c "
@@ -49,8 +49,7 @@ alias dea="deactivate"
 alias jn="jupyter notebook "
 alias mk="minikube "
 alias today="date -u +'%Y-%m-%d'"
-alias g="g++ -Wall -Weffc++ -Wextra -Wsign-conversion -Werror -std=c++17 "
-
+alias g="git "
 ## Python
 alias p="python "
 alias ipy="ipython "
