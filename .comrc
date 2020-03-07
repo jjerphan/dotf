@@ -23,7 +23,7 @@ source $HOME/.myrc 2> /dev/null
 ## Profiles ✏
 export DOTFILES_BARE="$HOME/.dotf"
 alias dotf='/usr/bin/git --git-dir=$DOTFILES_BARE --work-tree=$HOME'
-alias br="vim $HOME/.bashrc && source $HOME/.bashrc"
+alias brc="vim $HOME/.bashrc && source $HOME/.bashrc"
 alias zr="vim $HOME/.zshrc && source $HOME/.zshrc"
 alias xr="vim $HOME/.xonshrc"
 alias mr="vim $HOME/.myrc && source $HOME/.myrc"
@@ -50,6 +50,9 @@ alias jn="jupyter notebook "
 alias mk="minikube "
 alias today="date -u +'%Y-%m-%d'"
 alias g="git "
+alias ga="git add "
+alias gm="git commit -m "
+
 ## Python
 alias p="python "
 alias ipy="ipython "
@@ -62,6 +65,11 @@ function s() {
     deactivate 2> /dev/null
     source $VENVS_FOLDER/$1/bin/activate
 }
+
+function csv() {
+    column -s, -t <(head -n 1000 $1) | less -#2 -N -S
+}
+
 
 ## Docker 🐳
 # List images without Kubernetes fixtures
