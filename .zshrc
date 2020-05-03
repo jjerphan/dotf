@@ -92,7 +92,7 @@ git_info() {
 
 # Use → as the non-root prompt character; # for root
 # Change the prompt character color if the last command had a nonzero exit code
-PS1='%B⋅%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[white]%}%~%{$fg[red]%}%{$reset_color%} 🚀 %b $(git_info)
+PS1='%B⋅%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[white]%}%~%{$fg[red]%}%{$reset_color%} 🌍 %b $(git_info)
 %(?.%{$fg[green]%}.%{$fg[red]%})%(!.#. →)%{$reset_color%} '
 
 # For syntax highlighting
