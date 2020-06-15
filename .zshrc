@@ -16,8 +16,10 @@
 # Path to oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-source $ZSH/oh-my-zsh.sh
+export FZF_BASE=/usr/bin/fzf
 plugins=(git zsh-autosuggestions virtualenv fzf autojump)
+
+source $ZSH/oh-my-zsh.sh
 
 # For colors
 setopt prompt_subst
@@ -92,7 +94,8 @@ git_info() {
 
 # Use → as the non-root prompt character; # for root
 # Change the prompt character color if the last command had a nonzero exit code
-PS1='%B⋅%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[white]%}%~%{$fg[red]%}%{$reset_color%} 🌍 %b $(git_info)
+
+PS1='%{$fg[green]%}$(virtualenv_prompt_info)%{$reset_color%}%B⋅%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[white]%}%~%{$fg[red]%}%{$reset_color%} 🌍 %b $(git_info)
 %(?.%{$fg[green]%}.%{$fg[red]%})%(!.#. →)%{$reset_color%} '
 
 # For syntax highlighting
@@ -161,3 +164,4 @@ alias -g TL='| tail -20'
 alias -g T='| tail'
 alias -g US='| sort -u'
 alias -g X='| xargs'
+
