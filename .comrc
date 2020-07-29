@@ -57,6 +57,8 @@ alias pk="pkill "
 alias k="kill "
 alias js="jobs "
 alias desk="cd ~/Desktop"
+alias i="ipython"
+alias l="ls -ltrah"
 
 ## Python
 alias p="python "
