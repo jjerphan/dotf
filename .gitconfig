@@ -16,7 +16,8 @@
     cm = commit
     br = branch
     co = checkout
-    df = diff
+    df = diff --word-diff=color
+    dfs = diff --word-diff=color --staged
     dc = diff --cached
     lg = log -p
     pu = push
@@ -31,8 +32,11 @@
     amend = commit --amend
     tree = log --graph --oneline --all
     po = push origin
-    diffs = diff --staged
 [push]
     default = upstream
+
+[alias]
+    sync-forks = "submodule foreach 'git checkout master; git fetch upstream master; git rebase upstream/master; git push; git checkout -'"
+
 [commit]
 	gpgSign = true
