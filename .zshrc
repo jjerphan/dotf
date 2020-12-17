@@ -17,7 +17,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 export FZF_BASE=/usr/bin/fzf
-plugins=(git zsh-autosuggestions virtualenv fzf autojump)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting virtualenv fzf autojump)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -164,4 +164,7 @@ alias -g TL='| tail -20'
 alias -g T='| tail'
 alias -g US='| sort -u'
 alias -g X='| xargs'
+
+#bindkey -v
+
 
