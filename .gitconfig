@@ -2,6 +2,7 @@
     name = Julien Jerphanion (@jjerphan)
     email = git@jjerphan.xyz
     editor = vim
+    pager = delta
 
 [user]
     name = Julien Jerphanion (@jjerphan)
@@ -40,3 +41,21 @@
 
 [commit]
 	gpgSign = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    features = side-by-side line-numbers decorations
+    whitespace-error-style = 22 reverse
+	side-by-side = true
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
