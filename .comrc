@@ -59,6 +59,7 @@ alias js="jobs "
 alias desk="cd ~/Desktop"
 alias i="ipython"
 alias l="ls -ltrah"
+alias sp="python setup.py "
 
 ## Python
 alias p="python "
