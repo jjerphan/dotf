@@ -58,7 +58,21 @@
         " C++
         Plug 'Valloric/YouCompleteMe'
         Plug 'vim-syntastic/syntastic'
+
+        " CPython
+        Plug 'tpope/vim-fugitive'
+        Plug 'majutsushi/tagbar'
     call plug#end()
+
+    " Trigger tagbar automatically in Python files
+    autocmd FileType c call tagbar#autoopen(0)
+    autocmd FileType python call tagbar#autoopen(0)
+
+    " Show status bar
+    set laststatus=2
+
+    " Set status as current git branch
+    set statusline=%{FugitiveStatusline()}
 
     set background=dark
     colorscheme palenight
