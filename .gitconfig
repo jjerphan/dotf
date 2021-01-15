@@ -35,6 +35,8 @@
     po = push origin
 [push]
     default = upstream
+[pull]
+	rebase = true
 
 [alias]
     sync-forks = "submodule foreach 'git checkout master; git fetch upstream master; git rebase upstream/master; git push; git checkout -'"
@@ -46,7 +48,7 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-	
+
 [interactive]
     diffFilter = delta --color-only
 
