@@ -33,6 +33,9 @@
     amend = commit --amend
     tree = log --graph --oneline --all
     po = push origin
+    # Quickly adds a remote of the fork of a user ($1)
+    ra = "!gitra "
+
 [push]
     default = upstream
 [pull]

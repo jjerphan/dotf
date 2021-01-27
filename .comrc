@@ -200,6 +200,17 @@ fix () {
     test -n "$TF_CMD" && print -s $TF_CMD
 }
 
+
+# Quickly adds a remote of the fork of a user ($1)
+# Implementation of the git alias 'ra'
+gitra() {
+    origin_url=$(git remote -v | grep origin | awk '{print $2}' | head -n 1)
+    origin_user=$(echo $origin_url | cut -d ':' -f 2 | cut -d "/" -f 1)
+    new_remote_url=$(echo $origin_url | sed -e "s/$origin_user/$1/")
+    git remote add $1 $new_remote_url
+    echo "Remote for $1 added: $new_remote_url"
+}
+
 # Some colored output for gcc
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
